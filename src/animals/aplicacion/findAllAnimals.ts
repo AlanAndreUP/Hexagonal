@@ -1,4 +1,4 @@
-import { IAnimalRepository } from "../interfaces/puertos/IAnimalRepository";
+import { IAnimalRepository } from "../dominio/puertos/IAnimalRepository";
 
 export class FindAllAnimals {
     constructor(private readonly repository: IAnimalRepository){}

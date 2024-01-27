@@ -1,4 +1,4 @@
-import { IZooRepository } from "../interfaces/puertos/IZooRepository"; 
+import { IZooRepository } from "../dominio/puertos/IZooRepository"; 
 import { Zoo } from "../dominio/Zoo"; 
 
 export class CreateZoo {

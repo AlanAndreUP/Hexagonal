@@ -1,5 +1,4 @@
 import { Animals } from '../../animals/dominio/animals';
-import { v4 as uuidv4 } from 'uuid'; 
 export class Zoo {
     public animals: Animals[] = [];
     public id?: number;

@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { IZooRepository } from "../interfaces/puertos/IZooRepository";
+import { IZooRepository } from "../dominio/puertos/IZooRepository";
 import { Zoo } from "../dominio/Zoo";
 import { Animals } from "../../animals/dominio/animals"; 
 
@@ -25,7 +25,22 @@ export class ZooRepositoryPrisma implements IZooRepository {
             zooSaved.updatedAt
         );
     }
-
+    async findById(id: number): Promise<Zoo > {
+        const zoo = await this.prisma.zoo.findUnique({
+            where: { id }
+        });
+    
+        if (!zoo) {
+            const getdat: Date = new Date();
+            return new Zoo('', 0, getdat, getdat); 
+        }
+        return new Zoo(
+            zoo.name,
+            zoo.id,
+            zoo.createdAt,
+            zoo.updatedAt
+        );
+    }
 
 
 }

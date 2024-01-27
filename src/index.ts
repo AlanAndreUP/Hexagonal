@@ -1,7 +1,8 @@
 import express from 'express'
-import AnimalsRouter from './animals/interfaces/controllers/AnimalController'
-import ZooRouter from './zoo/interfaces/controllers/ZooController.'
-const app = express()
+import AnimalsRouter from './animals/infraestructure/AnimalRoutes'
+import ZooRouter from './zoo/infraestructure/ZooRoutes'
+const app = express();
+app.disable("x-powered-by");
 
 
 
@@ -12,5 +13,5 @@ app.use('/api/animals', AnimalsRouter)
 app.use('/api/Zoo', ZooRouter)
 
 app.listen(port, () => {
-    console.log('running on port ' + port)
+    console.log('Server Servido en la puerta ' + port)
 })

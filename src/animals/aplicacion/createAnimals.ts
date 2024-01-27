@@ -1,4 +1,4 @@
-import { IAnimalRepository } from "../interfaces/puertos/IAnimalRepository";
+import { IAnimalRepository } from "../dominio/puertos/IAnimalRepository";
 import { Animals } from "../dominio/animals";
 
 export class CreateAnimals {
