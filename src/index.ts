@@ -2,7 +2,6 @@ import express from 'express'
 import AnimalsRouter from './animals/infraestructure/AnimalRoutes'
 import ZooRouter from './zoo/infraestructure/ZooRoutes'
 const app = express();
-app.disable("x-powered-by");
 
 
 
