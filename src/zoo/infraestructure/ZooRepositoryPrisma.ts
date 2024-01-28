@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { IZooRepository } from "../dominio/puertos/IZooRepository";
 import { Zoo } from "../dominio/Zoo";
-import { Animals } from "../../animals/dominio/animals"; 
+
 
 export class ZooRepositoryPrisma implements IZooRepository {
     private prisma: PrismaClient;
