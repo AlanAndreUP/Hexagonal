@@ -2,9 +2,11 @@ import { Request, Response } from "express";
 import { CreateZoo } from "../../aplication/CreateZoo";
 import { FindZoo } from "../../aplication/FindZoo";
 import { ZooRepositoryPrisma } from "../ZooRepositoryPrisma";
-
+import { ZooRepository } from "../ZooRepositoryNotification";
 const repository = new ZooRepositoryPrisma();
-const createZoo = new CreateZoo(repository);
+const notifiactionRepository = new ZooRepository("amqp://papu:123456@34.195.235.24", "test", "1");
+
+const createZoo = new CreateZoo(repository,notifiactionRepository);
 const findZoo = new FindZoo(repository);
 
 export class ZooController {
